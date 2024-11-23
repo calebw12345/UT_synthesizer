@@ -26,7 +26,7 @@ def generate_synthetic_data():
   lr = 1e-5
   batch_size = 64
   epochs = 200
-  filepath = r"C:\Users\caleb\Documents\5122\week8lab\pages_demo\backwall_vae_100e.pth"
+  filepath = 'backwall_vae_100e.pth'
   model_state = torch.load(filepath)
   vae_model = VAE(input_dim, latent_dim)  # 1300
   vae_model.load_state_dict(model_state)
@@ -49,7 +49,7 @@ def generate_synthetic_data():
   st.pyplot(fig)
 
 
-  data = np.load(r'C:\Users\caleb\Documents\5122\week8lab\pages_demo\testdata.npy')
+  data = np.load('testdata.npy')
   data = data/np.max(data)
   realmean = np.mean(abs(data), axis=0)
   synmean = np.mean(abs(synthetic_datanp), axis=0)
